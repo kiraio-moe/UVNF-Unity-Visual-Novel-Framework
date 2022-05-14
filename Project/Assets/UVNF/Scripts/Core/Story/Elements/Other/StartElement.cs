@@ -47,6 +47,6 @@ namespace UVNF.Core.Story.Other
 
             IsRoot = GUILayout.Toggle(IsRoot, "Is Root");
         }
-    }
 #endif
+    }
 }

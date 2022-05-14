@@ -18,9 +18,9 @@ namespace UVNF.Core.Story.Character
         public string CharacterName;
 
         public Sprite Character;
-        private bool foldOut = false;
+        private bool foldOut;
 
-        public bool Flip = false;
+        public bool Flip;
 
         public ScenePositions EnterFromDirection = ScenePositions.Left;
         public ScenePositions FinalPosition = ScenePositions.Left;

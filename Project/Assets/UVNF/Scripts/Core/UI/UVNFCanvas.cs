@@ -4,8 +4,11 @@ using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
-using UnityEngine.InputSystem;
 using UVNF.Extensions;
+
+#if ENABLE_INPUT_SYSTEM
+using UnityEngine.InputSystem;
+#endif
 
 namespace UVNF.Core.UI
 {
@@ -35,6 +38,7 @@ namespace UVNF.Core.UI
         public Image BackgroundImage;
         public Image BackgroundFade;
 
+        [HideInInspector]
         public int ChoiceCallback = -1;
         public void ResetChoice() => ChoiceCallback = -1;
 
@@ -42,10 +46,15 @@ namespace UVNF.Core.UI
         public bool ChoiceCanvasEnabled => ChoiceCanvasGroup.gameObject.activeSelf;
         public bool LoadingCanvasEnabled => LoadingCanvasGroup.gameObject.activeSelf;
 
-        //TODO: Support more input systems
+#if ENABLE_INPUT_SYSTEM
         private Mouse _currentMouse = Mouse.current;
 
         private bool HasInput => _currentMouse.leftButton.wasPressedThisFrame;
+#endif
+
+#if ENABLE_LEGACY_INPUT_MANAGER
+        bool HasInput => Input.GetMouseButtonDown(0);
+#endif
 
         private void Awake()
         {

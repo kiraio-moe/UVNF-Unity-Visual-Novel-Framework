@@ -19,9 +19,9 @@ namespace UVNF.Core.Story.Utility
         public VariableManager Variables;
 
         public int VariableIndex = 0;
-        private int previousIndex = 0;
+        // private int previousIndex = 0;
 
-        private VariableTypes previousType = VariableTypes.Number;
+        // private VariableTypes previousType = VariableTypes.Number;
 
         private MathAffectTypes MathType = MathAffectTypes.Add;
         private StringAffectTypes StringType = StringAffectTypes.Replace;
