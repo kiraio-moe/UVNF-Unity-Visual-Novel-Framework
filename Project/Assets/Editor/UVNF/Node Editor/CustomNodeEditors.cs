@@ -22,7 +22,6 @@ namespace UVNF.Editor.Story.Nodes
             {
                 if (node == null) node = target as ChoiceElement;
                 EditorUtility.SetDirty(node);
-                ReplaceTint(node.DisplayColor);
             }
 
             public override void OnHeaderGUI()
@@ -80,8 +79,6 @@ namespace UVNF.Editor.Story.Nodes
             {
                 if (node == null) node = target as StoryElement;
                 EditorUtility.SetDirty(node);
-
-                ReplaceTint(node.DisplayColor);
             }
 
             public override void OnHeaderGUI()
