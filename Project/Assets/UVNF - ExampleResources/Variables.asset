@@ -13,11 +13,28 @@ MonoBehaviour:
   m_Name: Variables
   m_EditorClassIdentifier: 
   Variables:
-  - VariableName: PlayerName
+  - VariableName: Name
     ValueType: 0
     NumberValue: 0
     BooleanValue: 0
-    TextValue: Velorexe
+    TextValue: Bayu
+  - VariableName: Alive
+    ValueType: 2
+    NumberValue: 0
+    BooleanValue: 1
+    TextValue: 
+  - VariableName: HP
+    ValueType: 1
+    NumberValue: 100
+    BooleanValue: 0
+    TextValue: 
   VariableValues:
-  - Type: Variable, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
-    Data: '{"VariableName":"PlayerName","ValueType":0,"NumberValue":0.0,"BooleanValue":false,"TextValue":"Velorexe"}'
+  - Type: UVNF.Entities.Containers.Variables.Variable, Assembly-CSharp, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+    Data: '{"VariableName":"Name","ValueType":0,"NumberValue":0.0,"BooleanValue":false,"TextValue":"Bayu"}'
+  - Type: UVNF.Entities.Containers.Variables.Variable, Assembly-CSharp, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+    Data: '{"VariableName":"Alive","ValueType":2,"NumberValue":0.0,"BooleanValue":true,"TextValue":""}'
+  - Type: UVNF.Entities.Containers.Variables.Variable, Assembly-CSharp, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+    Data: '{"VariableName":"HP","ValueType":1,"NumberValue":100.0,"BooleanValue":false,"TextValue":""}'

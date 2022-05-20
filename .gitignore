@@ -8,12 +8,11 @@
 /Project/[Bb]uild/
 /Project/[Bb]uilds/
 /Project/[Ll]ogs/
+/Project/UIElementsSchema/
 
 # MemoryCaptures can get excessive in size.
 # They also could contain extremely sensitive data
 /Project/[Mm]emoryCaptures/
-
-/Documents/
 
 # Recordings can get excessive in size
 /Project/[Rr]ecordings/
