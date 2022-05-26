@@ -16,12 +16,14 @@ namespace UVNF.Core.Story.Other
 
         public override StoryElementTypes Type => StoryElementTypes.Other;
 
+        [TextArea(7, 7)]
         public string LogText;
 
 #if UNITY_EDITOR
         public override void DisplayLayout(Rect layoutRect, GUIStyle label)
         {
-            LogText = EditorGUILayout.TextField("Log Text", LogText);
+            GUILayout.Label("Log Text");
+            LogText = EditorGUILayout.TextArea(LogText, GUILayout.Height(100));
         }
 #endif
 

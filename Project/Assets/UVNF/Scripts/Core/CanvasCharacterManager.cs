@@ -18,6 +18,7 @@ namespace UVNF.Core
         private Character[] MiddleSideCharacters { get { return CharactersOnScreen.Where(x => x.CurrentPosition == ScenePositions.Middle).ToArray(); } }
         private Character[] RightSideCharacters { get { return CharactersOnScreen.Where(x => x.CurrentPosition == ScenePositions.Right).ToArray(); } }
 
+#region Add Character to Screen
         public void AddCharacter(string characterName, Sprite characterSprite, bool flip, ScenePositions enter, ScenePositions position, float enterTime)
         {
             MainCharacterStack.gameObject.SetActive(true);
@@ -116,32 +117,35 @@ namespace UVNF.Core
                     }
                     break;
             }
-
         }
+#endregion
 
+#region Remove Character from Screen
         public void RemoveCharacter(string characterName, ScenePositions exitPosition, float exitTime)
         {
             Character character = CharactersOnScreen.Find(x => x.Name == characterName);
 
-            Vector3 endPosition = new Vector3();
+            Vector2 endPosition = new Vector2();
 
             switch (exitPosition)
             {
                 case ScenePositions.Left:
-                    endPosition = new Vector3(-(character.Parent.rect.width + (character.Transform.rect.width / 2f)), 0, 0);
+                    endPosition = new Vector2(-(character.Parent.rect.width + (character.Transform.rect.width)), 0);
                     break;
                 case ScenePositions.Top:
-                    endPosition = new Vector3(0, character.Transform.rect.height, 0);
+                    endPosition = new Vector2(0, character.Transform.rect.height);
                     break;
                 case ScenePositions.Right:
-                    endPosition = new Vector3(character.Parent.rect.width + (character.Transform.rect.width / 2f), 0, 0);
+                    endPosition = new Vector2(character.Parent.rect.width + (character.Transform.rect.width), 0);
                     break;
             }
 
             CharactersOnScreen.Remove(character);
             character.MoveCharacter(endPosition, exitTime);
         }
+#endregion
 
+#region Move Character to Another Character Position
         public void MoveCharacterTo(string characterName, string characterToMoveTo, float moveTime)
         {
             Character mainCharacter = CharactersOnScreen.Find(x => x.Name == characterName);
@@ -149,16 +153,35 @@ namespace UVNF.Core
 
             mainCharacter.MoveCharacter(moveToCharacter.Transform.anchoredPosition, moveTime);
         }
+#endregion
 
-        public void ChangeCharacterSprite(string characterName, Sprite characterSprite)
+#region Change Character Sprite
+        public void ChangeCharacterSprite(string characterName, Sprite characterSprite, bool flip)
         {
             Character character = CharactersOnScreen.Find(x => x.Name == characterName);
             character.ChangeSprite(characterSprite);
-        }
+            RectTransform spriteTransform = character.GetComponent<RectTransform>();
 
+            if (flip)
+            {
+                switch (spriteTransform.localScale.x)
+                {
+                    case -1:
+                        spriteTransform.localScale = new Vector3(1, 1, 1);
+                        break;
+                    case 1:
+                        spriteTransform.localScale = new Vector3(-1, 1, 1);
+                        break;
+                }
+            }
+        }
+#endregion
+
+#region Hide Character
         public void Hide()
         {
             MainCharacterStack.gameObject.SetActive(false);
         }
+#endregion        
     }
 }

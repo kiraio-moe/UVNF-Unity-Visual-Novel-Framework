@@ -18,6 +18,8 @@ namespace UVNF.Core.Story.Audio
         public override StoryElementTypes Type => StoryElementTypes.Audio;
 
         public AudioClip AudioClip;
+
+        [Range(0, 1f)]
         public float Volume = 0.5f;
 
         public bool WaitForAudio = false;

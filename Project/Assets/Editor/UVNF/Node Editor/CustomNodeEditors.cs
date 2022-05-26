@@ -55,7 +55,7 @@ namespace UVNF.Editor.Story.Nodes
                     if (GUILayout.Button("+"))
                         node.AddChoice();
 
-                    node.ShuffleChocies = GUILayout.Toggle(node.ShuffleChocies, "Shuffle Choices");
+                    node.ShuffleChoices = GUILayout.Toggle(node.ShuffleChoices, "Shuffle Choices");
                     node.HideDialogue = GUILayout.Toggle(node.HideDialogue, "Hide Dialogue");
                 }
                 else
@@ -111,6 +111,68 @@ namespace UVNF.Editor.Story.Nodes
 
                 if (GUILayout.Button(arrow))
                     foldout = !foldout;
+            }
+        }
+
+        [CustomNodeEditor(typeof(ConditionElement))]
+        public class ConditionElementNodeEditor : NodeEditor
+        {
+            ConditionElement node;
+            bool foldout = true;
+
+            public override void OnCreate()
+            {
+                if (node == null)
+                {
+                    node = target as ConditionElement;
+                }
+                EditorUtility.SetDirty(node);
+            }
+
+            public override void OnHeaderGUI()
+            {
+                DisplayElementType(node.Type, node.ElementName, GetWidth());
+            }
+
+            public override void OnBodyGUI()
+            {
+                Rect lastRect;
+                GUILayout.BeginHorizontal();
+                {
+                    GUILayout.Label("Previous", EditorStyles.boldLabel);
+                    NodeEditorGUILayout.AddPortField(node.GetInputPort("PreviousNode"));
+                    GUILayout.Space(170f);
+                    GUILayout.BeginVertical();
+                        GUILayout.Label("Pass", EditorStyles.boldLabel);
+                        NodeEditorGUILayout.AddPortField(node.GetOutputPort("PassNode"));
+                        GUILayout.Space(5f);
+                        GUILayout.Label("Fail", EditorStyles.boldLabel);
+                        NodeEditorGUILayout.AddPortField(node.GetOutputPort("FailNode"));
+                    GUILayout.EndVertical();
+                    lastRect = GUILayoutUtility.GetLastRect();
+                }
+                GUILayout.EndHorizontal();
+                GUILayout.Space(7.5f);
+
+                if (foldout)
+                {
+                    node.DisplayNodeLayout(lastRect);
+                }
+
+                GUIContent arrow;
+                if (foldout)
+                {
+                    arrow = EditorGUIUtility.IconContent("d_Toolbar Minus");
+                }
+                else
+                {
+                    arrow = EditorGUIUtility.IconContent("d_Toolbar Plus");
+                }
+
+                if (GUILayout.Button(arrow))
+                {
+                    foldout = !foldout;
+                }
             }
         }
 

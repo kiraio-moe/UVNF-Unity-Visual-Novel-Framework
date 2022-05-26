@@ -17,14 +17,21 @@ namespace UVNF.Core.Story.Character
 
         public string CharacterName;
         public ScenePositions ExitPosition;
-        public float ExitTime;
+
+        [Range(0.1f, 10f)]
+        public float ExitTime = 1f;
 
 #if UNITY_EDITOR
         public override void DisplayLayout(Rect layoutRect, GUIStyle label)
         {
-            CharacterName = EditorGUILayout.TextField("Character Name", CharacterName);
+            GUILayout.BeginHorizontal();
+            {
+                GUILayout.Label("Character Name");
+                CharacterName = EditorGUILayout.TextField(CharacterName);
+            }
+            GUILayout.EndHorizontal();
             ExitPosition = (ScenePositions)EditorGUILayout.EnumPopup("Exit Position", ExitPosition);
-            ExitTime = EditorGUILayout.Slider("Exit Time", ExitTime, 1f, 10f);
+            ExitTime = EditorGUILayout.Slider("Exit Time", ExitTime, 0.1f, 10f);
         }
 #endif
 

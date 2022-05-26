@@ -131,6 +131,7 @@ MonoBehaviour:
     _dynamic: 0
   CharacterName: Velorexe
   NewSprite: {fileID: 21300000, guid: 54da592a2023b7d49b6eaa575b7aa54f, type: 3}
+  Flip: 0
 --- !u!114 &-7755183158541706524
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -334,6 +335,7 @@ MonoBehaviour:
     _dynamic: 0
   CharacterName: Velorexe
   NewSprite: {fileID: 21300000, guid: eadcd8ba451196a4e8eef12ee6fb7209, type: 3}
+  Flip: 0
 --- !u!114 &-6664353289656554294
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -466,6 +468,7 @@ MonoBehaviour:
     _dynamic: 0
   CharacterName: Velorexe
   NewSprite: {fileID: 21300000, guid: ebbf52845da71864ebe16bc4f6868a4e, type: 3}
+  Flip: 0
 --- !u!114 &-5583132717968379321
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -635,7 +638,7 @@ MonoBehaviour:
   - Vote this to yeet Velorexe off the earth
   - Option 3
   - Option 1
-  ShuffleChocies: 1
+  ShuffleChoices: 1
   HideDialogue: 0
 --- !u!114 &-4202814567086290832
 MonoBehaviour:
@@ -835,11 +838,11 @@ MonoBehaviour:
     _connectionType: 0
     _typeConstraint: 0
     _dynamic: 0
+  EnterFromDirection: 3
+  FinalPosition: 1
   CharacterName: Dummy_02
   Character: {fileID: 21300000, guid: 4bedf33a50e1cb049b6c13d6026399e1, type: 3}
   Flip: 0
-  EnterFromDirection: 3
-  FinalPosition: 1
   EnterTime: 2
 --- !u!114 &-2959676496126754392
 MonoBehaviour:
@@ -1037,6 +1040,7 @@ MonoBehaviour:
     _dynamic: 0
   CharacterName: Velorexe
   NewSprite: {fileID: 21300000, guid: 1cdd78d85483bfb41892664f40affae2, type: 3}
+  Flip: 0
 --- !u!114 &-2022572691547937303
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1100,11 +1104,11 @@ MonoBehaviour:
     _connectionType: 0
     _typeConstraint: 0
     _dynamic: 0
+  EnterFromDirection: 0
+  FinalPosition: 2
   CharacterName: Velorexe
   Character: {fileID: 21300000, guid: 54da592a2023b7d49b6eaa575b7aa54f, type: 3}
   Flip: 1
-  EnterFromDirection: 0
-  FinalPosition: 2
   EnterTime: 2
 --- !u!114 &-883208638497975754
 MonoBehaviour:
@@ -1355,11 +1359,11 @@ MonoBehaviour:
     _connectionType: 0
     _typeConstraint: 0
     _dynamic: 0
+  EnterFromDirection: 0
+  FinalPosition: 1
   CharacterName: Dummy_03
   Character: {fileID: 21300000, guid: 895742d32a0c74b4e97ab3560ceb40b2, type: 3}
   Flip: 0
-  EnterFromDirection: 0
-  FinalPosition: 1
   EnterTime: 2
 --- !u!114 &484853186979455687
 MonoBehaviour:
@@ -1635,6 +1639,7 @@ MonoBehaviour:
     _dynamic: 0
   CharacterName: Velorexe
   NewSprite: {fileID: 21300000, guid: 5a263f0efe0c15242bcc465bfaa22a6c, type: 3}
+  Flip: 0
 --- !u!114 &2759896806774999601
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1702,7 +1707,7 @@ MonoBehaviour:
     _typeConstraint: 0
     _dynamic: 0
   ShowLoadScreen: 1
-  FadeOutTime: 0.001
+  FadeOutTime: 0.1
   FadeOtherElements: 0
   WaitToFinish: 1
 --- !u!114 &2774417702196442724
@@ -1770,6 +1775,7 @@ MonoBehaviour:
     _dynamic: 0
   CharacterName: Velorexe
   NewSprite: {fileID: 21300000, guid: 2a468122556fe124199e9a04071c8381, type: 3}
+  Flip: 0
 --- !u!114 &3132982908049285808
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1901,6 +1907,7 @@ MonoBehaviour:
     _dynamic: 0
   CharacterName: Velorexe
   NewSprite: {fileID: 21300000, guid: 5a263f0efe0c15242bcc465bfaa22a6c, type: 3}
+  Flip: 0
 --- !u!114 &3533188137706985574
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2233,11 +2240,11 @@ MonoBehaviour:
     _connectionType: 0
     _typeConstraint: 0
     _dynamic: 0
+  EnterFromDirection: 1
+  FinalPosition: 1
   CharacterName: Jocelyn
   Character: {fileID: 21300000, guid: eaaf4d2d809493145b73c4f402b906db, type: 3}
   Flip: 0
-  EnterFromDirection: 1
-  FinalPosition: 1
   EnterTime: 2
 --- !u!114 &4481697564452455866
 MonoBehaviour:
@@ -2303,7 +2310,7 @@ MonoBehaviour:
     _typeConstraint: 0
     _dynamic: 0
   CharacterName: Velorexe
-  Dialogue: After some dicussion with the artist for this project (Jocelyn Hatch)
+  Dialogue: After some dicussion with the artist for this project (Jocelyn Hatch),
     I've decided to release it a bit earlier than I intended to.
   Beep: 1
   BeepOnVowel: 1
@@ -2443,7 +2450,7 @@ MonoBehaviour:
     _connectionType: 0
     _typeConstraint: 0
     _dynamic: 0
-  StoryName: ExampleStory
+  StoryName: Example Story
   IsRoot: 1
 --- !u!114 &5640366496711102671
 MonoBehaviour:
@@ -2510,6 +2517,7 @@ MonoBehaviour:
     _dynamic: 0
   CharacterName: Velorexe
   NewSprite: {fileID: 21300000, guid: 54da592a2023b7d49b6eaa575b7aa54f, type: 3}
+  Flip: 0
 --- !u!114 &5964938735606451206
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2573,11 +2581,11 @@ MonoBehaviour:
     _connectionType: 0
     _typeConstraint: 0
     _dynamic: 0
+  EnterFromDirection: 1
+  FinalPosition: 1
   CharacterName: Dummy_01
   Character: {fileID: 21300000, guid: 5a263f0efe0c15242bcc465bfaa22a6c, type: 3}
   Flip: 0
-  EnterFromDirection: 1
-  FinalPosition: 1
   EnterTime: 2
 --- !u!114 &6472896098518316389
 MonoBehaviour:
@@ -2710,6 +2718,7 @@ MonoBehaviour:
     _dynamic: 0
   CharacterName: Velorexe
   NewSprite: {fileID: 21300000, guid: 5a263f0efe0c15242bcc465bfaa22a6c, type: 3}
+  Flip: 0
 --- !u!114 &7487686641615215702
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2775,6 +2784,7 @@ MonoBehaviour:
     _dynamic: 0
   CharacterName: Velorexe
   NewSprite: {fileID: 21300000, guid: eadcd8ba451196a4e8eef12ee6fb7209, type: 3}
+  Flip: 1
 --- !u!114 &8450749346354004192
 MonoBehaviour:
   m_ObjectHideFlags: 0

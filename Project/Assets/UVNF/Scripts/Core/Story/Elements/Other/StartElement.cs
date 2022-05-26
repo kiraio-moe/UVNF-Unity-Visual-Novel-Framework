@@ -9,7 +9,7 @@ using UVNF.Extensions;
 
 namespace UVNF.Core.Story.Other
 {
-    [NodeTint("#CCFCC3"), Serializable]
+    // [NodeTint("#CCFCC3"), Serializable]
     public class StartElement : StoryElement
     {
         public override string ElementName => "Start";

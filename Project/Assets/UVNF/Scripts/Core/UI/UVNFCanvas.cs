@@ -48,11 +48,8 @@ namespace UVNF.Core.UI
 
 #if ENABLE_INPUT_SYSTEM
         private Mouse _currentMouse = Mouse.current;
-
         private bool HasInput => _currentMouse.leftButton.wasPressedThisFrame;
-#endif
-
-#if ENABLE_LEGACY_INPUT_MANAGER
+#elif ENABLE_LEGACY_INPUT_MANAGER
         bool HasInput => Input.GetMouseButtonDown(0);
 #endif
 

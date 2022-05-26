@@ -16,6 +16,8 @@ namespace UVNF.Core.Story.Dialogue
         public bool BeepOnVowel;
 
         public bool PitchShift;
+
+        [Range(0.1f, 0.2f)]
         public float MaxPitch;
 
         public AudioClip BoopSoundEffect;
@@ -28,15 +30,28 @@ namespace UVNF.Core.Story.Dialogue
             Beep = GUILayout.Toggle(Beep, "Beep");
             if (Beep)
             {
-                BoopSoundEffect = EditorGUILayout.ObjectField("Beep Sound Effect", BoopSoundEffect, typeof(AudioClip), false) as AudioClip;
+                GUILayout.BeginHorizontal();
+                {
+                    GUILayout.Label("Beep SFX");
+                    BoopSoundEffect = EditorGUILayout.ObjectField(BoopSoundEffect, typeof(AudioClip), false) as AudioClip;
+                }
+                GUILayout.EndHorizontal();
+
                 BeepOnVowel = GUILayout.Toggle(BeepOnVowel, "Beep Only On Vowel");
 
                 PitchShift = GUILayout.Toggle(PitchShift, "Pitch Shift");
                 if (PitchShift)
-                    MaxPitch = EditorGUILayout.Slider(MaxPitch, 0f, 0.2f);
+                    MaxPitch = EditorGUILayout.Slider(MaxPitch, 0.1f, 0.2f);
             }
             else
-                DialogueClip = EditorGUILayout.ObjectField("Dialogue", DialogueClip, typeof(AudioClip), false) as AudioClip;
+            {
+                GUILayout.BeginHorizontal();
+                {
+                    GUILayout.Label("Dialogue");
+                    DialogueClip = EditorGUILayout.ObjectField(DialogueClip, typeof(AudioClip), false) as AudioClip;
+                }
+                GUILayout.EndHorizontal();
+            }
         }
 #endif
 

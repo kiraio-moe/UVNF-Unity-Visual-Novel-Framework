@@ -18,6 +18,8 @@ namespace UVNF.Core.Story.Audio
         public bool PauseBackgroundMusic = true;
 
         public bool Fade = true;
+
+        [Range(0.1f, 10f)]
         public float FadeTime = 1f;
 
 #if UNITY_EDITOR
@@ -25,7 +27,8 @@ namespace UVNF.Core.Story.Audio
         {
             PauseBackgroundMusic = GUILayout.Toggle(PauseBackgroundMusic, "Pause Background Music");
             Fade = GUILayout.Toggle(Fade, "Fade Background Music");
-            if (Fade) EditorGUILayout.FloatField("Fade Time", FadeTime);
+            if (Fade)
+                FadeTime = EditorGUILayout.Slider("Fade Time", FadeTime, 0.1f, 10f);
         }
 #endif
 

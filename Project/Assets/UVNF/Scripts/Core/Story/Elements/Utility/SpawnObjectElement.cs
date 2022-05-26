@@ -21,7 +21,7 @@ namespace UVNF.Core.Story.Utility
 #if UNITY_EDITOR
         public override void DisplayLayout(Rect layoutRect, GUIStyle label)
         {
-            GUILayout.Label("Object To Spawn", EditorStyles.boldLabel);
+            GUILayout.Label("Object To Spawn");
             ObjectToSpawn = EditorGUILayout.ObjectField(ObjectToSpawn, typeof(GameObject), false) as GameObject;
         }
 #endif

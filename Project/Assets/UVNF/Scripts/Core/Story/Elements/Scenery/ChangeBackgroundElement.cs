@@ -17,6 +17,8 @@ namespace UVNF.Core.Story.Scenery
 
         public Sprite NewBackground;
         public bool Fade = true;
+
+        [Range(0.1f, 10f)]
         public float FadeTime = 1f;
 
 #if UNITY_EDITOR
@@ -27,7 +29,7 @@ namespace UVNF.Core.Story.Scenery
 
             Fade = GUILayout.Toggle(Fade, "Fade");
             if (Fade)
-                FadeTime = EditorGUILayout.FloatField("Fade out time", FadeTime);
+                FadeTime = EditorGUILayout.Slider("Fade Out Time", FadeTime, 0.1f, 10f);
         }
 #endif
 

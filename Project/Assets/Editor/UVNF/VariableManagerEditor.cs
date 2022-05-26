@@ -18,7 +18,7 @@ namespace UVNF.Editor
         [MenuItem("UVNF/Variable Manager")]
         public static void Init()
         {
-            VariableManagerEditor window = GetWindow<VariableManagerEditor>();
+            VariableManagerEditor window = (VariableManagerEditor)GetWindow(typeof(VariableManagerEditor), false, "Variable Manager");
             window.Show();
         }
 

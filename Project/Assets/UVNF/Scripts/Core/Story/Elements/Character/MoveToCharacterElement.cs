@@ -19,15 +19,21 @@ namespace UVNF.Core.Story.Character
         public string Character;
         public string CharacterToMoveTo;
 
+        [Range(0.1f, 10f)]
         public float MoveTime = 1f;
 
 #if UNITY_EDITOR
         public override void DisplayLayout(Rect layoutRect, GUIStyle label)
         {
             Character = EditorGUILayout.TextField("Character", Character);
-            CharacterToMoveTo = EditorGUILayout.TextField("Character To Move To", CharacterToMoveTo);
+            GUILayout.BeginHorizontal();
+            {
+                GUILayout.Label("Character To Move To");
+                CharacterToMoveTo = EditorGUILayout.TextField(CharacterToMoveTo);
+            }
+            GUILayout.EndHorizontal();
 
-            MoveTime = EditorGUILayout.FloatField("Move Time", MoveTime);
+            MoveTime = EditorGUILayout.Slider("Move Time", MoveTime, 0.1f, 10f);
         }
 #endif
 

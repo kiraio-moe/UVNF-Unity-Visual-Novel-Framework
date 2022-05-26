@@ -17,7 +17,9 @@ namespace UVNF.Core.Story.Utility
 
         public bool ShowLoadScreen;
 
+        [Range(0, 10f)]
         public float FadeOutTime = 1f;
+        
         public bool FadeOtherElements;
 
         public bool WaitToFinish = true;
@@ -30,7 +32,11 @@ namespace UVNF.Core.Story.Utility
                 GUILayout.Label("Load screen will show.");
             else
                 GUILayout.Label("Load screen will hide.");
-            FadeOutTime = EditorGUILayout.Slider(FadeOutTime, 0, 10f);
+            GUILayout.BeginHorizontal();
+            {
+                FadeOutTime = EditorGUILayout.Slider("Fade Out Time", FadeOutTime, 0, 10f);
+            }
+            GUILayout.EndHorizontal();
             FadeOtherElements = GUILayout.Toggle(FadeOtherElements, $"Fade {(ShowLoadScreen ? "Out" : "In")} Other Elements");
             WaitToFinish = GUILayout.Toggle(WaitToFinish, "Wait To Finish Before Proceeding");
         }

@@ -15,54 +15,67 @@ namespace UVNF.Core.Story.Character
 
         public override StoryElementTypes Type => StoryElementTypes.Character;
 
-        public string CharacterName;
-
-        public Sprite Character;
-        private bool foldOut;
-
-        public bool Flip;
-
         public ScenePositions EnterFromDirection = ScenePositions.Left;
         public ScenePositions FinalPosition = ScenePositions.Left;
+        
+        public string CharacterName;
+        public Sprite Character;
 
-        public float EnterTime = 2f;
+        public bool Flip;
+        bool Preview;
+
+        [Range(0.1f, 10f)]
+        public float EnterTime = 1f;
+        float CharacterScale = 1.3f;
 
 #if UNITY_EDITOR
         public override void DisplayLayout(Rect layoutRect, GUIStyle label)
         {
-            CharacterName = EditorGUILayout.TextField("Character Name", CharacterName);
-
             GUILayout.BeginHorizontal();
             {
-                GUILayout.Label("Character Sprite", GUILayout.MaxWidth(147));
-                Character = EditorGUILayout.ObjectField(Character, typeof(Sprite), false) as Sprite;
+                GUILayout.Label("Character Name");
+                CharacterName = EditorGUILayout.TextField(CharacterName);
             }
             GUILayout.EndHorizontal();
 
-            Flip = GUILayout.Toggle(Flip, "Flip");
+            GUILayout.BeginHorizontal();
+            {
+                GUILayout.Label("Character Sprite");
+                Character = EditorGUILayout.ObjectField(Character, typeof(Sprite), false) as Sprite;
+                Flip = GUILayout.Toggle(Flip, "Flip");
+            }
+            GUILayout.EndHorizontal();
 
             if (Character != null)
             {
-                foldOut = EditorGUILayout.Foldout(foldOut, "Preview", true);
-                if (foldOut)
+                Preview = EditorGUILayout.Foldout(Preview, "Preview", true);
+                if (Preview)
                 {
-                    layoutRect.position = new Vector2(layoutRect.x, layoutRect.y + 70);
-                    layoutRect.width = 1000;
-                    layoutRect.height = 500;
+                    float CharacterWidth = Character.rect.width - (Character.rect.width / CharacterScale);
+                    float CharacterHeight = Character.rect.height - (Character.rect.height / CharacterScale);
+                    Vector2 CharacterPosition = layoutRect.center / 4f;
 
-                    layoutRect.width = Character.rect.width / (Character.rect.height / 500);
-                    //if (Flip) layoutRect.width = -layoutRect.width * 2;
-                    layoutRect.height = 500;
+                    layoutRect.position = CharacterPosition;
+                    layoutRect.width = CharacterWidth;
+                    layoutRect.height = CharacterHeight;
+
+                    CharacterScale = EditorGUILayout.Slider("Zoom", CharacterScale, 1.2f, 1.3f);
+                    layoutRect.position = new Vector2(CharacterPosition.x - (CharacterScale * 30f), CharacterPosition.y + 145f);
+
+                    if (Flip)
+                    {
+                        // TODO: Flip image at preview
+                    }
 
                     GUI.DrawTexture(layoutRect, Character.texture, ScaleMode.ScaleToFit);
-                    GUILayout.Space(500);
+                    GUILayout.Space(CharacterHeight + 35f);
                 }
             }
 
             EnterFromDirection = (ScenePositions)EditorGUILayout.EnumPopup("Enter From", EnterFromDirection);
             FinalPosition = (ScenePositions)EditorGUILayout.EnumPopup("Final Position", FinalPosition);
 
-            EnterTime = EditorGUILayout.Slider("Enter Time", EnterTime, 1f, 10f);
+            EnterTime = EditorGUILayout.Slider("Enter Time", EnterTime, 0.1f, 10f);
         }
 #endif
 
@@ -70,6 +83,11 @@ namespace UVNF.Core.Story.Character
         {
             managerCallback.CharacterManager.AddCharacter(CharacterName, Character, Flip, EnterFromDirection, FinalPosition, EnterTime);
             return null;
+        }
+
+        IEnumerator AnimatePreview(float StartPosition, float EndPosition, float Duration)
+        {
+            yield return null;
         }
     }
 }

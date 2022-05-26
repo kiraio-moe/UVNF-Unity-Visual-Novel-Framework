@@ -15,13 +15,13 @@ namespace UVNF.Core.Story.Utility
 
         public override StoryElementTypes Type => StoryElementTypes.Utility;
 
+        [Range(0.1f, 10f)]
         public float WaitTime = 1f;
 
 #if UNITY_EDITOR
         public override void DisplayLayout(Rect layoutRect, GUIStyle label)
         {
-            WaitTime = EditorGUILayout.FloatField("Wait Time", WaitTime);
-            WaitTime = EditorGUILayout.Slider("Wait Time", WaitTime, 0.1f, WaitTime > 10f ? WaitTime : 10f);
+            WaitTime = EditorGUILayout.Slider("Wait Time", WaitTime, 0.1f, 10f);
         }
 #endif
 

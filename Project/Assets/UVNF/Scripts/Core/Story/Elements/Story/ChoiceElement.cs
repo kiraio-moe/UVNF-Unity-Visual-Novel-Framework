@@ -19,7 +19,7 @@ namespace UVNF.Core.Story.Dialogue
 
         public List<string> Choices = new List<string>();
 
-        public bool ShuffleChocies = true;
+        public bool ShuffleChoices = true;
         public bool HideDialogue = false;
 
 #if UNITY_EDITOR
@@ -27,7 +27,10 @@ namespace UVNF.Core.Story.Dialogue
         {
             for (int i = 0; i < Choices.Count; i++)
             {
-                GUILayout.Label("Choice " + (i + 1), label);
+                if (!ShuffleChoices)
+                {
+                    GUILayout.Label("Choice " + (i + 1));
+                }
                 Choices[i] = GUILayout.TextField(Choices[i]);
                 if (GUILayout.Button("-"))
                 {
@@ -39,7 +42,7 @@ namespace UVNF.Core.Story.Dialogue
             if (GUILayout.Button("+"))
                 AddChoice();
 
-            ShuffleChocies = GUILayout.Toggle(ShuffleChocies, "Shuffle Choices");
+            ShuffleChoices = GUILayout.Toggle(ShuffleChoices, "Shuffle Choices");
             HideDialogue = GUILayout.Toggle(HideDialogue, "Hide Dialogue");
         }
 
@@ -59,7 +62,7 @@ namespace UVNF.Core.Story.Dialogue
         public override IEnumerator Execute(UVNFManager managerCallback, UVNFCanvas canvas)
         {
             List<string> choiceList = Choices;
-            if (ShuffleChocies)
+            if (ShuffleChoices)
             {
                 choiceList.Shuffle();
             }

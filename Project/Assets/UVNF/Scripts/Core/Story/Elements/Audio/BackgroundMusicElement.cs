@@ -18,9 +18,12 @@ namespace UVNF.Core.Story.Audio
         public AudioClip BackgroundMusic;
 
         public bool Crossfade = true;
+
+        [Range(0.1f, 10f)]
         public float CrossfadeTime = 1f;
 
-        public float Volume;
+        [Range(0, 1f)]
+        public float Volume = 0.5f;
 
 #if UNITY_EDITOR
         public override void DisplayLayout(Rect layoutRect, GUIStyle label)
@@ -29,7 +32,14 @@ namespace UVNF.Core.Story.Audio
 
             Crossfade = GUILayout.Toggle(Crossfade, "Crossfade");
             if (Crossfade)
-                CrossfadeTime = EditorGUILayout.FloatField("Crossfade Time", CrossfadeTime);
+            {
+                GUILayout.BeginHorizontal();
+                {
+                    GUILayout.Label("Crossfade Time");
+                    CrossfadeTime = EditorGUILayout.Slider(CrossfadeTime, 0.1f, 10f);
+                }
+                GUILayout.EndHorizontal();
+            }
 
             if (CrossfadeTime < 0) CrossfadeTime = 0;
             Volume = EditorGUILayout.Slider("Volume", Volume, 0f, 1f);
