@@ -1,0 +1,22 @@
+{
+    "name": "UVNF.Editor",
+    "rootNamespace": "",
+    "references": [
+        "GUID:343deaaf83e0cee4ca978e7df0b80d21",
+        "GUID:bbf74d7c4a9b3fb498c6cff723bc54b8",
+        "GUID:d4117f85d7484134f8d16637aa0ec180",
+        "GUID:fb02b04b80650c146891828c7bc58418",
+        "GUID:2e7d9250653cbfa40a99b84cdd8463ba"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
