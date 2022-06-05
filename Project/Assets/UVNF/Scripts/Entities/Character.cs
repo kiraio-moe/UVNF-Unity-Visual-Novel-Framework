@@ -22,28 +22,32 @@ namespace UVNF.Entities
         }
         private Coroutine movingCoroutine;
 
-        public void MoveCharacter(Vector2 endPosition, float moveTime)
+        public void MoveCharacter(Vector3 endPosition, float moveTime)
         {
             if (CurrentlyMoving)
+            {
                 StopCoroutine(movingCoroutine);
+            }
 
-            movingCoroutine = StartCoroutine(MoveCharacterCoroutine(Transform.anchoredPosition, endPosition, moveTime));
+            movingCoroutine = StartCoroutine(MoveCharacterCoroutine(Transform.anchoredPosition3D, endPosition, moveTime));
         }
 
-        public IEnumerator MoveCharacterCoroutine(Vector2 startPosition, Vector2 endPosition, float moveTime)
+        public IEnumerator MoveCharacterCoroutine(Vector3 startPosition, Vector3 endPosition, float moveTime)
         {
-            float distance = Vector3.Distance(startPosition, endPosition);
+            // float distance = Vector3.Distance(startPosition, endPosition);
             float currentLerpTime = 0f;
 
-            while (Transform.anchoredPosition != endPosition)
+            while (Transform.anchoredPosition3D != endPosition)
             {
                 currentLerpTime += Time.deltaTime;
                 if (currentLerpTime > moveTime)
+                {
                     currentLerpTime = moveTime;
+                }
 
                 float t = currentLerpTime / moveTime;
                 t = t * t * t * (t * (6f * t - 15f) + 10f);
-                Transform.anchoredPosition = Vector2.Lerp(startPosition, endPosition, t);
+                Transform.anchoredPosition3D = Vector3.Lerp(startPosition, endPosition, t);
                 yield return null;
             }
         }

@@ -19,6 +19,7 @@ namespace UVNF.Core.UI
         public CanvasGroup ChoiceCanvasGroup;
         public CanvasGroup LoadingCanvasGroup;
         public CanvasGroup BackgroundCanvasGroup;
+        public CanvasGroup TransitionCanvasGroup;
 
         [Header("Dialogue")]
         public TextMeshProUGUI DialogueTMP;
@@ -327,6 +328,38 @@ namespace UVNF.Core.UI
 
             BackgroundFade.canvasRenderer.SetAlpha(1f);
             BackgroundFade.CrossFadeAlpha(0f, transitionTime, false);
+        }
+
+        public IEnumerator ScreenFadeTransition(CanvasGroup canvasGroup, Color mainColor, float fadeTime, float duration)
+        {
+            if (canvasGroup != null)
+            {
+                Image img = canvasGroup.GetComponent<Image>();
+                float progress = 0;
+
+                img.color = Color.white;
+                img.material = Resources.Load<Material>("Fade");
+                img.material.SetColor("_Color", mainColor);
+
+                // DO FADE IN
+                while (progress < 1f)
+                {
+                    progress += Time.deltaTime / fadeTime;
+                    img.material.SetFloat("_Alpha", progress);
+                    yield return new WaitForSeconds(0.02f);
+                }
+
+                // PAUSE
+                yield return new WaitForSeconds(duration);
+
+                // DO FADE OUT
+                while (progress > 0)
+                {
+                    progress -= Time.deltaTime / fadeTime;
+                    img.material.SetFloat("_Alpha", progress);
+                    yield return new WaitForSeconds(0.02f);
+                }
+            }
         }
         #endregion
 

@@ -50,28 +50,28 @@ namespace UVNF.Core
             float multiplier = characterSprite.rect.height / spriteTransform.rect.height;
             spriteTransform.sizeDelta = new Vector2(characterSprite.rect.width / multiplier, spriteTransform.sizeDelta.y);
 
-            Vector2 startPosition = new Vector2();
+            Vector3 startPosition = new Vector3();
             switch (enter)
             {
                 case ScenePositions.Left:
-                    startPosition = new Vector2(-parentTransform.sizeDelta.x - spriteTransform.sizeDelta.x / 2, 0);
+                    startPosition = new Vector3(-parentTransform.sizeDelta.x - spriteTransform.sizeDelta.x / 2, 0, 0);
                     break;
                 case ScenePositions.Top:
-                    startPosition = new Vector2(0, parentTransform.sizeDelta.y + spriteTransform.sizeDelta.y / 2);
+                    startPosition = new Vector3(0, parentTransform.sizeDelta.y + spriteTransform.sizeDelta.y / 2, 0);
                     break;
                 case ScenePositions.Right:
-                    startPosition = new Vector2(parentTransform.sizeDelta.x + spriteTransform.sizeDelta.x / 2, 0);
+                    startPosition = new Vector3(parentTransform.sizeDelta.x + spriteTransform.sizeDelta.x / 2, 0, 0);
                     break;
             }
 
             spriteTransform.anchoredPosition = startPosition;
             CharactersOnScreen.Add(character);
 
-            Vector2 endPosition = new Vector2();
+            Vector3 endPosition = new Vector3();
             switch (position)
             {
                 case ScenePositions.Left:
-                    endPosition = new Vector2(-(parentTransform.sizeDelta.x / 2), 0);
+                    endPosition = new Vector3(-(parentTransform.sizeDelta.x / 2), 0, 0);
 
                     Character[] leftCharacters = LeftSideCharacters.Reverse().ToArray();
                     if (leftCharacters.Length > 1)
@@ -80,7 +80,7 @@ namespace UVNF.Core
                         float offset = leftPosition / (leftCharacters.Length + 1);
                         for (int i = 0; i < leftCharacters.Length; i++)
                         {
-                            Vector2 newPosition = new Vector2(-parentTransform.sizeDelta.x + offset * (i + 1), 0);
+                            Vector3 newPosition = new Vector3(-parentTransform.sizeDelta.x + offset * (i + 1), 0, 0);
                             leftCharacters[i].MoveCharacter(newPosition, 1f);
                         }
                     }
@@ -90,15 +90,15 @@ namespace UVNF.Core
                     }
                     break;
                 case ScenePositions.Top:
-                    endPosition = new Vector2(0, 0);
+                    endPosition = new Vector3(0, 0, 0);
                     character.MoveCharacter(endPosition, enterTime);
                     break;
                 case ScenePositions.Middle:
-                    endPosition = new Vector2(0f, 0f);
+                    endPosition = new Vector3(0, 0, 0);
                     character.MoveCharacter(endPosition, enterTime);
                     break;
                 case ScenePositions.Right:
-                    endPosition = new Vector2(parentTransform.sizeDelta.x / 2, 0);
+                    endPosition = new Vector3(parentTransform.sizeDelta.x / 2, 0, 0);
 
                     Character[] rightCharacters = RightSideCharacters;
                     if (rightCharacters.Length > 1)
@@ -107,7 +107,7 @@ namespace UVNF.Core
                         float offset = rightPosition / (rightCharacters.Length + 1);
                         for (int i = 0; i < rightCharacters.Length; i++)
                         {
-                            Vector2 newPosition = new Vector2(offset * (i + 1), 0);
+                            Vector3 newPosition = new Vector3(offset * (i + 1), 0, 0);
                             rightCharacters[i].MoveCharacter(newPosition, 1f);
                         }
                     }

@@ -84,10 +84,5 @@ namespace UVNF.Core.Story.Character
             managerCallback.CharacterManager.AddCharacter(CharacterName, Character, Flip, EnterFromDirection, FinalPosition, EnterTime);
             return null;
         }
-
-        IEnumerator AnimatePreview(float StartPosition, float EndPosition, float Duration)
-        {
-            yield return null;
-        }
     }
 }
