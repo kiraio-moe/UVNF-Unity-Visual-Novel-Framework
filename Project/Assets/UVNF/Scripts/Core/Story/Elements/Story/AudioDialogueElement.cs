@@ -52,15 +52,16 @@ namespace UVNF.Core.Story.Dialogue
                 }
                 GUILayout.EndHorizontal();
             }
+            GUILayout.Space(8);
         }
 #endif
 
         public override IEnumerator Execute(UVNFManager managerCallback, UVNFCanvas canvas)
         {
             if (Beep)
-                return canvas.DisplayText(Dialogue, CharacterName, BoopSoundEffect, managerCallback.AudioManager, MaxPitch, BeepOnVowel);
+                return canvas.DisplayText(Dialogue, CharacterName, UniqueColor, BoopSoundEffect, managerCallback.AudioManager, MaxPitch, BeepOnVowel);
             else
-                return canvas.DisplayText(Dialogue, CharacterName, DialogueClip, managerCallback.AudioManager);
+                return canvas.DisplayText(Dialogue, CharacterName, UniqueColor, DialogueClip, managerCallback.AudioManager);
         }
     }
 }

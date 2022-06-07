@@ -37,14 +37,14 @@ MonoBehaviour:
         PublicKeyToken=null
       connections:
       - fieldName: PreviousNode
-        node: {fileID: 3964138587138135276}
+        node: {fileID: 8989942211329610719}
         reroutePoints: []
       _direction: 1
       _connectionType: 1
       _typeConstraint: 0
       _dynamic: 0
   Active: 0
-  Next: {fileID: 3964138587138135276}
+  Next: {fileID: 8989942211329610719}
   PreviousNode:
     _fieldName: 
     _node: {fileID: 0}
@@ -63,7 +63,9 @@ MonoBehaviour:
     _connectionType: 0
     _typeConstraint: 0
     _dynamic: 0
+  CharacterManager: {fileID: 0}
   CharacterName: Velorexe
+  UniqueColor: {r: 75, g: 75, b: 75, a: 255}
   Dialogue: Anyways, I'm pretty much done explaining right now. So you can see how
     far you'll get before you miss any UVNF Elements.
 --- !u!114 &-7925866276808309983
@@ -129,6 +131,7 @@ MonoBehaviour:
     _connectionType: 0
     _typeConstraint: 0
     _dynamic: 0
+  CharacterManager: {fileID: 0}
   CharacterName: Velorexe
   NewSprite: {fileID: 21300000, guid: 54da592a2023b7d49b6eaa575b7aa54f, type: 3}
   Flip: 0
@@ -195,7 +198,9 @@ MonoBehaviour:
     _connectionType: 0
     _typeConstraint: 0
     _dynamic: 0
+  CharacterManager: {fileID: 0}
   CharacterName: Velorexe
+  UniqueColor: {r: 75, g: 75, b: 75, a: 255}
   Dialogue: Like choices! Every choice has it's own outcome, which can be connected
     to any node of your choice.
 --- !u!114 &-7417331654238819783
@@ -261,7 +266,9 @@ MonoBehaviour:
     _connectionType: 0
     _typeConstraint: 0
     _dynamic: 0
+  CharacterManager: {fileID: 0}
   CharacterName: Velorexe
+  UniqueColor: {r: 75, g: 75, b: 75, a: 255}
   Dialogue: It took me quite some time to make this whole framework, so I would love
     some feedback on either the GitHub page or to me privately on Discord (Velorexe#8403).
   Beep: 1
@@ -333,6 +340,7 @@ MonoBehaviour:
     _connectionType: 0
     _typeConstraint: 0
     _dynamic: 0
+  CharacterManager: {fileID: 0}
   CharacterName: Velorexe
   NewSprite: {fileID: 21300000, guid: eadcd8ba451196a4e8eef12ee6fb7209, type: 3}
   Flip: 0
@@ -373,7 +381,7 @@ MonoBehaviour:
         PublicKeyToken=null
       connections:
       - fieldName: PreviousNode
-        node: {fileID: -2022572691547937303}
+        node: {fileID: 2759896806774999601}
         reroutePoints: []
       _direction: 1
       _connectionType: 1
@@ -466,76 +474,10 @@ MonoBehaviour:
     _connectionType: 0
     _typeConstraint: 0
     _dynamic: 0
+  CharacterManager: {fileID: 0}
   CharacterName: Velorexe
   NewSprite: {fileID: 21300000, guid: ebbf52845da71864ebe16bc4f6868a4e, type: 3}
   Flip: 0
---- !u!114 &-5965244553570700268
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 20b15759461429942939e7936f0b6068, type: 3}
-  m_Name: Transition Element
-  m_EditorClassIdentifier: 
-  graph: {fileID: 11400000}
-  position: {x: 920, y: 392}
-  ports:
-    keys:
-    - PreviousNode
-    - NextNode
-    values:
-    - _fieldName: PreviousNode
-      _node: {fileID: -5965244553570700268}
-      _typeQualifiedName: XNode.NodePort, XNode, Version=0.0.0.0, Culture=neutral,
-        PublicKeyToken=null
-      connections:
-      - fieldName: NextNode
-        node: {fileID: -2959676496126754392}
-        reroutePoints: []
-      _direction: 0
-      _connectionType: 0
-      _typeConstraint: 0
-      _dynamic: 0
-    - _fieldName: NextNode
-      _node: {fileID: -5965244553570700268}
-      _typeQualifiedName: XNode.NodePort, XNode, Version=0.0.0.0, Culture=neutral,
-        PublicKeyToken=null
-      connections:
-      - fieldName: PreviousNode
-        node: {fileID: 3967926872396613714}
-        reroutePoints: []
-      _direction: 1
-      _connectionType: 1
-      _typeConstraint: 0
-      _dynamic: 0
-  Active: 0
-  Next: {fileID: 3967926872396613714}
-  PreviousNode:
-    _fieldName: 
-    _node: {fileID: 0}
-    _typeQualifiedName: 
-    connections: []
-    _direction: 0
-    _connectionType: 0
-    _typeConstraint: 0
-    _dynamic: 0
-  NextNode:
-    _fieldName: 
-    _node: {fileID: 0}
-    _typeQualifiedName: 
-    connections: []
-    _direction: 0
-    _connectionType: 0
-    _typeConstraint: 0
-    _dynamic: 0
-  TransitionEffects: 0
-  MainColor: {r: 0.9960785, g: 0.7686275, b: 0.7686275, a: 255}
-  FadeTime: 0.1
-  WaitDuration: 1
 --- !u!114 &-5583132717968379321
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -599,6 +541,7 @@ MonoBehaviour:
     _connectionType: 0
     _typeConstraint: 0
     _dynamic: 0
+  CharacterManager: {fileID: 0}
   CharacterName: Dummy_01
   ExitPosition: 1
   ExitTime: 1
@@ -703,8 +646,8 @@ MonoBehaviour:
     _dynamic: 0
   Choices:
   - Option 3
-  - Option 1
   - Vote this to yeet Velorexe off the earth
+  - Option 1
   ShuffleChoices: 1
   HideDialogue: 0
 --- !u!114 &-4017467196683258320
@@ -770,7 +713,9 @@ MonoBehaviour:
     _connectionType: 0
     _typeConstraint: 0
     _dynamic: 0
+  CharacterManager: {fileID: 0}
   CharacterName: Velorexe
+  UniqueColor: {r: 75, g: 75, b: 75, a: 255}
   Dialogue: This was mostly a decision based on the lack of feedback I was able to
     get from my close surroundings and the motivation I got from seeing multiple
     GitHub users favouriting my project.
@@ -780,6 +725,97 @@ MonoBehaviour:
   MaxPitch: 0.2
   BoopSoundEffect: {fileID: 8300000, guid: c8fa33de6006b874dbe76170f373dc23, type: 3}
   DialogueClip: {fileID: 0}
+--- !u!114 &-3684883111074202475
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e5078e2883b71e7438a5d965f15f77c8, type: 3}
+  m_Name: Choice Element
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: 11304, y: -8}
+  ports:
+    keys:
+    - PreviousNode
+    - NextNode
+    - Choice0
+    - Choice1
+    values:
+    - _fieldName: PreviousNode
+      _node: {fileID: -3684883111074202475}
+      _typeQualifiedName: XNode.NodePort, XNode, Version=0.0.0.0, Culture=neutral,
+        PublicKeyToken=null
+      connections:
+      - fieldName: NextNode
+        node: {fileID: 8989942211329610719}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: NextNode
+      _node: {fileID: -3684883111074202475}
+      _typeQualifiedName: XNode.NodePort, XNode, Version=0.0.0.0, Culture=neutral,
+        PublicKeyToken=null
+      connections: []
+      _direction: 1
+      _connectionType: 1
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: Choice0
+      _node: {fileID: -3684883111074202475}
+      _typeQualifiedName: XNode.NodePort, XNode, Version=0.0.0.0, Culture=neutral,
+        PublicKeyToken=null
+      connections:
+      - fieldName: PreviousNode
+        node: {fileID: 2759896806774999601}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 1
+      _typeConstraint: 1
+      _dynamic: 1
+    - _fieldName: Choice1
+      _node: {fileID: -3684883111074202475}
+      _typeQualifiedName: XNode.NodePort, XNode, Version=0.0.0.0, Culture=neutral,
+        PublicKeyToken=null
+      connections:
+      - fieldName: PreviousNode
+        node: {fileID: 3964138587138135276}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 1
+      _typeConstraint: 1
+      _dynamic: 1
+  Active: 0
+  Next: {fileID: 0}
+  PreviousNode:
+    _fieldName: 
+    _node: {fileID: 0}
+    _typeQualifiedName: 
+    connections: []
+    _direction: 0
+    _connectionType: 0
+    _typeConstraint: 0
+    _dynamic: 0
+  NextNode:
+    _fieldName: 
+    _node: {fileID: 0}
+    _typeQualifiedName: 
+    connections: []
+    _direction: 0
+    _connectionType: 0
+    _typeConstraint: 0
+    _dynamic: 0
+  Choices:
+  - Yes
+  - No
+  ShuffleChoices: 0
+  HideDialogue: 0
 --- !u!114 &-3599330920068850453
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -793,7 +829,7 @@ MonoBehaviour:
   m_Name: Enter Scene Element
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: 6056, y: 248}
+  position: {x: 6056, y: 344}
   ports:
     keys:
     - PreviousNode
@@ -843,6 +879,7 @@ MonoBehaviour:
     _connectionType: 0
     _typeConstraint: 0
     _dynamic: 0
+  CharacterManager: {fileID: 0}
   EnterFromDirection: 3
   FinalPosition: 1
   CharacterName: Dummy_02
@@ -886,14 +923,14 @@ MonoBehaviour:
         PublicKeyToken=null
       connections:
       - fieldName: PreviousNode
-        node: {fileID: -5965244553570700268}
+        node: {fileID: 7487686641615215702}
         reroutePoints: []
       _direction: 1
       _connectionType: 1
       _typeConstraint: 0
       _dynamic: 0
   Active: 0
-  Next: {fileID: -5965244553570700268}
+  Next: {fileID: 7487686641615215702}
   PreviousNode:
     _fieldName: 
     _node: {fileID: 0}
@@ -912,7 +949,9 @@ MonoBehaviour:
     _connectionType: 0
     _typeConstraint: 0
     _dynamic: 0
+  CharacterManager: {fileID: 11400000, guid: 6b3a3e49770dfab47bc2501dda160b60, type: 2}
   CharacterName: Velorexe
+  UniqueColor: {r: 0.25943398, g: 0.76641726, b: 1, a: 255}
   Dialogue: Hello!
 --- !u!114 &-2829197401580914606
 MonoBehaviour:
@@ -927,7 +966,7 @@ MonoBehaviour:
   m_Name: Exit Scene Element
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: 6776, y: 344}
+  position: {x: 6776, y: 568}
   ports:
     keys:
     - PreviousNode
@@ -977,6 +1016,7 @@ MonoBehaviour:
     _connectionType: 0
     _typeConstraint: 0
     _dynamic: 0
+  CharacterManager: {fileID: 0}
   CharacterName: Dummy_03
   ExitPosition: 1
   ExitTime: 1.4
@@ -1043,6 +1083,7 @@ MonoBehaviour:
     _connectionType: 0
     _typeConstraint: 0
     _dynamic: 0
+  CharacterManager: {fileID: 0}
   CharacterName: Velorexe
   NewSprite: {fileID: 21300000, guid: 1cdd78d85483bfb41892664f40affae2, type: 3}
   Flip: 0
@@ -1069,10 +1110,7 @@ MonoBehaviour:
       _node: {fileID: -2022572691547937303}
       _typeQualifiedName: XNode.NodePort, XNode, Version=0.0.0.0, Culture=neutral,
         PublicKeyToken=null
-      connections:
-      - fieldName: NextNode
-        node: {fileID: -6664353289656554294}
-        reroutePoints: []
+      connections: []
       _direction: 0
       _connectionType: 0
       _typeConstraint: 0
@@ -1109,6 +1147,7 @@ MonoBehaviour:
     _connectionType: 0
     _typeConstraint: 0
     _dynamic: 0
+  CharacterManager: {fileID: 11400000, guid: 6b3a3e49770dfab47bc2501dda160b60, type: 2}
   EnterFromDirection: 0
   FinalPosition: 2
   CharacterName: Velorexe
@@ -1178,6 +1217,7 @@ MonoBehaviour:
     _connectionType: 0
     _typeConstraint: 0
     _dynamic: 0
+  CharacterManager: {fileID: 0}
   CharacterName: Jocelyn
   ExitPosition: 1
   ExitTime: 1
@@ -1194,7 +1234,7 @@ MonoBehaviour:
   m_Name: Wait Element
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: 6456, y: -8}
+  position: {x: 6424, y: -8}
   ports:
     keys:
     - PreviousNode
@@ -1299,7 +1339,8 @@ MonoBehaviour:
   - {fileID: 8450749346354004192}
   - {fileID: 8849484160834273604}
   - {fileID: -8118167508060997485}
-  - {fileID: -5965244553570700268}
+  - {fileID: -3684883111074202475}
+  - {fileID: 8989942211329610719}
   StoryNames:
   - Example Story
 --- !u!114 &426794231324701066
@@ -1315,7 +1356,7 @@ MonoBehaviour:
   m_Name: Enter Scene Element
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: 6056, y: 504}
+  position: {x: 6056, y: 696}
   ports:
     keys:
     - PreviousNode
@@ -1365,6 +1406,7 @@ MonoBehaviour:
     _connectionType: 0
     _typeConstraint: 0
     _dynamic: 0
+  CharacterManager: {fileID: 0}
   EnterFromDirection: 0
   FinalPosition: 1
   CharacterName: Dummy_03
@@ -1434,7 +1476,9 @@ MonoBehaviour:
     _connectionType: 0
     _typeConstraint: 0
     _dynamic: 0
+  CharacterManager: {fileID: 0}
   CharacterName: Velorexe
+  UniqueColor: {r: 75, g: 75, b: 75, a: 255}
   Dialogue: As you can hear I got some audio dialogue implemented. These can do beeps
     and boops (total ripoff from Animal Crossing, yikes) and normal audio.
   Beep: 1
@@ -1512,7 +1556,9 @@ MonoBehaviour:
     _connectionType: 0
     _typeConstraint: 0
     _dynamic: 0
+  CharacterManager: {fileID: 0}
   CharacterName: Velorexe
+  UniqueColor: {r: 75, g: 75, b: 75, a: 255}
   Dialogue: Or in this case all end in the same end choice.
 --- !u!114 &1128092687570314782
 MonoBehaviour:
@@ -1577,7 +1623,9 @@ MonoBehaviour:
     _connectionType: 0
     _typeConstraint: 0
     _dynamic: 0
+  CharacterManager: {fileID: 0}
   CharacterName: Velorexe
+  UniqueColor: {r: 75, g: 75, b: 75, a: 255}
   Dialogue: Of course you can also use the Dialogue options that don't have audio
     on them for some internal thinking of your character.
 --- !u!114 &1924711864495957666
@@ -1643,6 +1691,7 @@ MonoBehaviour:
     _connectionType: 0
     _typeConstraint: 0
     _dynamic: 0
+  CharacterManager: {fileID: 0}
   CharacterName: Velorexe
   NewSprite: {fileID: 21300000, guid: 5a263f0efe0c15242bcc465bfaa22a6c, type: 3}
   Flip: 0
@@ -1675,6 +1724,12 @@ MonoBehaviour:
         reroutePoints: []
       - fieldName: NextNode
         node: {fileID: 5270346473795117227}
+        reroutePoints: []
+      - fieldName: NextNode
+        node: {fileID: -6664353289656554294}
+        reroutePoints: []
+      - fieldName: Choice0
+        node: {fileID: -3684883111074202475}
         reroutePoints: []
       _direction: 0
       _connectionType: 0
@@ -1779,6 +1834,7 @@ MonoBehaviour:
     _connectionType: 0
     _typeConstraint: 0
     _dynamic: 0
+  CharacterManager: {fileID: 0}
   CharacterName: Velorexe
   NewSprite: {fileID: 21300000, guid: 2a468122556fe124199e9a04071c8381, type: 3}
   Flip: 0
@@ -1845,7 +1901,9 @@ MonoBehaviour:
     _connectionType: 0
     _typeConstraint: 0
     _dynamic: 0
+  CharacterManager: {fileID: 0}
   CharacterName: Velorexe
+  UniqueColor: {r: 75, g: 75, b: 75, a: 255}
   Dialogue: Even though it contains a lot of rings and bells, I didn't forget about
     the core features...
 --- !u!114 &3219563264312694754
@@ -1911,6 +1969,7 @@ MonoBehaviour:
     _connectionType: 0
     _typeConstraint: 0
     _dynamic: 0
+  CharacterManager: {fileID: 0}
   CharacterName: Velorexe
   NewSprite: {fileID: 21300000, guid: 5a263f0efe0c15242bcc465bfaa22a6c, type: 3}
   Flip: 0
@@ -1977,7 +2036,9 @@ MonoBehaviour:
     _connectionType: 0
     _typeConstraint: 0
     _dynamic: 0
+  CharacterManager: {fileID: 0}
   CharacterName: Velorexe
+  UniqueColor: {r: 75, g: 75, b: 75, a: 255}
   Dialogue: Since Characters are very important to any visual novel, I spend way
     too much time implemented a stupid implementation that took way too much time
     where characters "stack" on either side of the screen.
@@ -2044,7 +2105,9 @@ MonoBehaviour:
     _connectionType: 0
     _typeConstraint: 0
     _dynamic: 0
+  CharacterManager: {fileID: 0}
   CharacterName: Velorexe (<= Total Dummy)
+  UniqueColor: {r: 75, g: 75, b: 75, a: 255}
   Dialogue: You got quite some options when using this framework to customize little
     things, I hope to expand this further in the future.
 --- !u!114 &3964138587138135276
@@ -2060,7 +2123,7 @@ MonoBehaviour:
   m_Name: Loading Screen Element
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: 10984, y: -8}
+  position: {x: 11624, y: -8}
   ports:
     keys:
     - PreviousNode
@@ -2071,8 +2134,8 @@ MonoBehaviour:
       _typeQualifiedName: XNode.NodePort, XNode, Version=0.0.0.0, Culture=neutral,
         PublicKeyToken=null
       connections:
-      - fieldName: NextNode
-        node: {fileID: -8118167508060997485}
+      - fieldName: Choice1
+        node: {fileID: -3684883111074202475}
         reroutePoints: []
       _direction: 0
       _connectionType: 0
@@ -2136,7 +2199,7 @@ MonoBehaviour:
         PublicKeyToken=null
       connections:
       - fieldName: NextNode
-        node: {fileID: -5965244553570700268}
+        node: {fileID: 7487686641615215702}
         reroutePoints: []
       _direction: 0
       _connectionType: 0
@@ -2174,7 +2237,9 @@ MonoBehaviour:
     _connectionType: 0
     _typeConstraint: 0
     _dynamic: 0
+  CharacterManager: {fileID: 0}
   CharacterName: Velorexee
+  UniqueColor: {r: 75, g: 75, b: 75, a: 255}
   Dialogue: Welcome to UVNF! I think it's really cool that you decided to give this
     a download.
   Beep: 1
@@ -2246,6 +2311,7 @@ MonoBehaviour:
     _connectionType: 0
     _typeConstraint: 0
     _dynamic: 0
+  CharacterManager: {fileID: 0}
   EnterFromDirection: 1
   FinalPosition: 1
   CharacterName: Jocelyn
@@ -2315,7 +2381,9 @@ MonoBehaviour:
     _connectionType: 0
     _typeConstraint: 0
     _dynamic: 0
+  CharacterManager: {fileID: 0}
   CharacterName: Velorexe
+  UniqueColor: {r: 75, g: 75, b: 75, a: 255}
   Dialogue: After some dicussion with the artist for this project (Jocelyn Hatch),
     I've decided to release it a bit earlier than I intended to.
   Beep: 1
@@ -2387,7 +2455,9 @@ MonoBehaviour:
     _connectionType: 0
     _typeConstraint: 0
     _dynamic: 0
+  CharacterManager: {fileID: 0}
   CharacterName: Velorexe
+  UniqueColor: {r: 75, g: 75, b: 75, a: 255}
   Dialogue: So let me give you a little tour of what you can do with this framework
     (for now).
   Beep: 1
@@ -2521,6 +2591,7 @@ MonoBehaviour:
     _connectionType: 0
     _typeConstraint: 0
     _dynamic: 0
+  CharacterManager: {fileID: 0}
   CharacterName: Velorexe
   NewSprite: {fileID: 21300000, guid: 54da592a2023b7d49b6eaa575b7aa54f, type: 3}
   Flip: 0
@@ -2587,6 +2658,7 @@ MonoBehaviour:
     _connectionType: 0
     _typeConstraint: 0
     _dynamic: 0
+  CharacterManager: {fileID: 0}
   EnterFromDirection: 1
   FinalPosition: 1
   CharacterName: Dummy_01
@@ -2606,7 +2678,7 @@ MonoBehaviour:
   m_Name: Exit Scene Element
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: 6776, y: 168}
+  position: {x: 6776, y: 280}
   ports:
     keys:
     - PreviousNode
@@ -2656,6 +2728,7 @@ MonoBehaviour:
     _connectionType: 0
     _typeConstraint: 0
     _dynamic: 0
+  CharacterManager: {fileID: 0}
   CharacterName: Dummy_02
   ExitPosition: 1
   ExitTime: 2.5
@@ -2722,6 +2795,7 @@ MonoBehaviour:
     _connectionType: 0
     _typeConstraint: 0
     _dynamic: 0
+  CharacterManager: {fileID: 0}
   CharacterName: Velorexe
   NewSprite: {fileID: 21300000, guid: 5a263f0efe0c15242bcc465bfaa22a6c, type: 3}
   Flip: 0
@@ -2738,7 +2812,7 @@ MonoBehaviour:
   m_Name: Change Sprite Element
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: 936, y: -104}
+  position: {x: 936, y: -8}
   ports:
     keys:
     - PreviousNode
@@ -2748,7 +2822,10 @@ MonoBehaviour:
       _node: {fileID: 7487686641615215702}
       _typeQualifiedName: XNode.NodePort, XNode, Version=0.0.0.0, Culture=neutral,
         PublicKeyToken=null
-      connections: []
+      connections:
+      - fieldName: NextNode
+        node: {fileID: -2959676496126754392}
+        reroutePoints: []
       _direction: 0
       _connectionType: 0
       _typeConstraint: 0
@@ -2757,7 +2834,10 @@ MonoBehaviour:
       _node: {fileID: 7487686641615215702}
       _typeQualifiedName: XNode.NodePort, XNode, Version=0.0.0.0, Culture=neutral,
         PublicKeyToken=null
-      connections: []
+      connections:
+      - fieldName: PreviousNode
+        node: {fileID: 3967926872396613714}
+        reroutePoints: []
       _direction: 1
       _connectionType: 1
       _typeConstraint: 0
@@ -2782,9 +2862,10 @@ MonoBehaviour:
     _connectionType: 0
     _typeConstraint: 0
     _dynamic: 0
+  CharacterManager: {fileID: 0}
   CharacterName: Velorexe
   NewSprite: {fileID: 21300000, guid: eadcd8ba451196a4e8eef12ee6fb7209, type: 3}
-  Flip: 1
+  Flip: 0
 --- !u!114 &8450749346354004192
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2848,7 +2929,9 @@ MonoBehaviour:
     _connectionType: 0
     _typeConstraint: 0
     _dynamic: 0
+  CharacterManager: {fileID: 0}
   CharacterName: Velorexe
+  UniqueColor: {r: 75, g: 75, b: 75, a: 255}
   Dialogue: If you want a full list of all the elements you can use, you can open
     the UVNFStoryElements window in the UVNF tab.
 --- !u!114 &8849484160834273604
@@ -2914,7 +2997,76 @@ MonoBehaviour:
     _connectionType: 0
     _typeConstraint: 0
     _dynamic: 0
+  CharacterManager: {fileID: 0}
   CharacterName: Velorexe
+  UniqueColor: {r: 75, g: 75, b: 75, a: 255}
   Dialogue: If you're really depraved on info, please DM me on Discord (Velorexe#8403,
     still thinking about opening a Discord server). You can also DM me if you want
     custom elements that you think the framework needs.
+--- !u!114 &8989942211329610719
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a3c599ddc9a1b854f85859c7762a12fb, type: 3}
+  m_Name: Dialogue Element
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: 10984, y: -8}
+  ports:
+    keys:
+    - PreviousNode
+    - NextNode
+    values:
+    - _fieldName: PreviousNode
+      _node: {fileID: 8989942211329610719}
+      _typeQualifiedName: XNode.NodePort, XNode, Version=0.0.0.0, Culture=neutral,
+        PublicKeyToken=null
+      connections:
+      - fieldName: NextNode
+        node: {fileID: -8118167508060997485}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: NextNode
+      _node: {fileID: 8989942211329610719}
+      _typeQualifiedName: XNode.NodePort, XNode, Version=0.0.0.0, Culture=neutral,
+        PublicKeyToken=null
+      connections:
+      - fieldName: PreviousNode
+        node: {fileID: -3684883111074202475}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 1
+      _typeConstraint: 0
+      _dynamic: 0
+  Active: 0
+  Next: {fileID: -3684883111074202475}
+  PreviousNode:
+    _fieldName: 
+    _node: {fileID: 0}
+    _typeQualifiedName: 
+    connections: []
+    _direction: 0
+    _connectionType: 0
+    _typeConstraint: 0
+    _dynamic: 0
+  NextNode:
+    _fieldName: 
+    _node: {fileID: 0}
+    _typeQualifiedName: 
+    connections: []
+    _direction: 0
+    _connectionType: 0
+    _typeConstraint: 0
+    _dynamic: 0
+  CharacterManager: {fileID: 0}
+  CharacterName: Velorexe
+  UniqueColor: {r: 255, g: 255, b: 255, a: 255}
+  Dialogue: Repeat?

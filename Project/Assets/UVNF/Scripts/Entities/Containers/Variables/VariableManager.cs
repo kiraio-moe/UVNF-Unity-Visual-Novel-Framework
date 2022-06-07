@@ -6,7 +6,7 @@ using UVNF.Core.Serialization;
 
 namespace UVNF.Entities.Containers.Variables
 {
-    [CreateAssetMenu]
+    [CreateAssetMenu(fileName = "Variables", menuName = "UVNF/Variable Manager")]
     public class VariableManager : ScriptableObject, ISerializationCallbackReceiver
     {
         public List<Variable> Variables = new List<Variable>();

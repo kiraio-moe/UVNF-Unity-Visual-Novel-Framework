@@ -21,7 +21,9 @@ namespace UVNF.Core.Story.Utility
 #if UNITY_EDITOR
         public override void DisplayLayout(Rect layoutRect, GUIStyle label)
         {
+            GUILayout.Space(8);
             WaitTime = EditorGUILayout.Slider("Wait Time", WaitTime, 0.1f, 10f);
+            GUILayout.Space(8);
         }
 #endif
 

@@ -3,6 +3,7 @@ using UnityEditor;
 using UnityEngine;
 using UVNF.Core.UI;
 using UVNF.Extensions;
+using UVNF.Entities.Containers.Variables;
 
 namespace UVNF.Core.Story.Character
 {
@@ -15,6 +16,9 @@ namespace UVNF.Core.Story.Character
 
         public override StoryElementTypes Type => StoryElementTypes.Character;
 
+        public CharacterVariableManager CharacterManager;
+        int VariableIndex = 0;
+
         public string CharacterName;
         public Sprite NewSprite;
 
@@ -26,12 +30,35 @@ namespace UVNF.Core.Story.Character
 #if UNITY_EDITOR
         public override void DisplayLayout(Rect layoutRect, GUIStyle label)
         {
-            GUILayout.BeginHorizontal();
+            GUILayout.Space(8);
+            if (CharacterManager == null)
             {
-                GUILayout.Label("Character Name");
-                CharacterName = EditorGUILayout.TextField(CharacterName);
+                EditorGUILayout.HelpBox("You can use pre-defined character you have created by right click > Create > UVNF > Define Character and assign them or you can use a custom character below.", MessageType.Info);
+                GUILayout.Space(8);
             }
-            GUILayout.EndHorizontal();
+            else if (CharacterManager.CharaVariables.Count <= 0)
+            {
+                EditorGUILayout.HelpBox("Looks like you haven\'t created any character yet, please create one at UVNF (window menu) > Define Character.", MessageType.Warning);
+                GUILayout.Space(8);
+            }
+
+            CharacterManager = EditorGUILayout.ObjectField("Variables", CharacterManager, typeof(CharacterVariableManager), false) as CharacterVariableManager;
+
+            if (CharacterManager != null && CharacterManager.CharaVariables.Count > 0)
+            {
+                VariableIndex = EditorGUILayout.Popup("Character", VariableIndex, CharacterManager.CharactersList());
+                CharacterName = CharacterManager.CharaVariables[VariableIndex].CharacterName;
+            }
+            else if (CharacterManager == null)
+            {
+                GUILayout.Label("Custom Character", EditorStyles.boldLabel);
+                GUILayout.BeginHorizontal();
+                {
+                    GUILayout.Label("Character Name");
+                    CharacterName = EditorGUILayout.TextField(CharacterName);
+                }
+                GUILayout.EndHorizontal();
+            }
 
             GUILayout.BeginHorizontal();
             {
@@ -55,7 +82,7 @@ namespace UVNF.Core.Story.Character
                     layoutRect.height = CharacterHeight;
 
                     CharacterScale = EditorGUILayout.Slider("Zoom", CharacterScale, 1.2f, 1.3f);
-                    layoutRect.position = new Vector2(CharacterPosition.x - (CharacterScale * 30f), CharacterPosition.y + 145f);
+                    layoutRect.position = new Vector2(CharacterPosition.x - (CharacterScale * 30f), CharacterPosition.y + 250f);
 
                     if (Flip)
                     {
@@ -66,6 +93,7 @@ namespace UVNF.Core.Story.Character
                     GUILayout.Space(CharacterHeight + 35f);
                 }
             }
+            GUILayout.Space(8);
         }
 #endif
 

@@ -25,10 +25,14 @@ namespace UVNF.Core.Story.Audio
 #if UNITY_EDITOR
         public override void DisplayLayout(Rect layoutRect, GUIStyle label)
         {
+            GUILayout.Space(8);
             PauseBackgroundMusic = GUILayout.Toggle(PauseBackgroundMusic, "Pause Background Music");
             Fade = GUILayout.Toggle(Fade, "Fade Background Music");
             if (Fade)
+            {
                 FadeTime = EditorGUILayout.Slider("Fade Time", FadeTime, 0.1f, 10f);
+            }
+            GUILayout.Space(8);
         }
 #endif
 

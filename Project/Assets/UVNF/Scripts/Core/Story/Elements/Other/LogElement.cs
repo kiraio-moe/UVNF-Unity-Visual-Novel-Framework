@@ -22,8 +22,10 @@ namespace UVNF.Core.Story.Other
 #if UNITY_EDITOR
         public override void DisplayLayout(Rect layoutRect, GUIStyle label)
         {
+            GUILayout.Space(8);
             GUILayout.Label("Log Text");
             LogText = EditorGUILayout.TextArea(LogText, GUILayout.Height(100));
+            GUILayout.Space(8);
         }
 #endif
 

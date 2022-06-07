@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 21c5814b8fdf91c41881ce810e1d45ae, type: 3}
+  m_Name: Characters
+  m_EditorClassIdentifier: 
+  CharaVariables:
+  - VariableName: Jocelyn_Default
+    CharacterName: Jocelyn
+    UniqueColor: {r: 1, g: 0.3915094, b: 0.66503036, a: 1}
+  - VariableName: Velorexe_Default
+    CharacterName: Velorexe
+    UniqueColor: {r: 0.25943398, g: 0.76641726, b: 1, a: 255}
+  - VariableName: Velorexe_Alt
+    CharacterName: Velorexe
+    UniqueColor: {r: 1, g: 0.11792451, b: 0.11792451, a: 255}
+  VariableValues:
+  - Type: UVNF.Entities.Containers.Variables.CharacterVariables, UVNF, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+    Data: '{"VariableName":"Jocelyn_Default","CharacterName":"Jocelyn","UniqueColor":{"r":1.0,"g":0.39150941371917727,"b":0.6650303602218628,"a":1.0}}'
+  - Type: UVNF.Entities.Containers.Variables.CharacterVariables, UVNF, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+    Data: '{"VariableName":"Velorexe_Default","CharacterName":"Velorexe","UniqueColor":{"r":0.2594339847564697,"g":0.7664172649383545,"b":1.0,"a":255.0}}'
+  - Type: UVNF.Entities.Containers.Variables.CharacterVariables, UVNF, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+    Data: '{"VariableName":"Velorexe_Alt","CharacterName":"Velorexe","UniqueColor":{"r":1.0,"g":0.1179245114326477,"b":0.1179245114326477,"a":255.0}}'

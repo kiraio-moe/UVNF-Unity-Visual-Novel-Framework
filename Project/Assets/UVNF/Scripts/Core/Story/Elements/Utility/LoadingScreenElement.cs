@@ -27,11 +27,8 @@ namespace UVNF.Core.Story.Utility
 #if UNITY_EDITOR
         public override void DisplayLayout(Rect layoutRect, GUIStyle label)
         {
+            GUILayout.Space(8);
             ShowLoadScreen = GUILayout.Toggle(ShowLoadScreen, "Show Load Screen");
-            if (ShowLoadScreen)
-                GUILayout.Label("Load screen will show.");
-            else
-                GUILayout.Label("Load screen will hide.");
             GUILayout.BeginHorizontal();
             {
                 FadeOutTime = EditorGUILayout.Slider("Fade Out Time", FadeOutTime, 0, 10f);
@@ -39,6 +36,7 @@ namespace UVNF.Core.Story.Utility
             GUILayout.EndHorizontal();
             FadeOtherElements = GUILayout.Toggle(FadeOtherElements, $"Fade {(ShowLoadScreen ? "Out" : "In")} Other Elements");
             WaitToFinish = GUILayout.Toggle(WaitToFinish, "Wait To Finish Before Proceeding");
+            GUILayout.Space(8);
         }
 #endif
 

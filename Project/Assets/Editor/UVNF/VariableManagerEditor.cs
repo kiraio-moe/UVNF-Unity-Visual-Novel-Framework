@@ -24,6 +24,12 @@ namespace UVNF.Editor
 
         private void OnGUI()
         {
+            if (Variables == null)
+            {
+                EditorGUILayout.HelpBox("Please assign a Variable Manager or you can create one by right click > Create > UVNF > Variable Manager.", MessageType.Warning);
+                GUILayout.Space(5);
+            }
+
             GUILayout.BeginVertical();
             {
                 GUILayout.BeginHorizontal("Box");
@@ -37,7 +43,7 @@ namespace UVNF.Editor
                     if (Variables != null)
                     {
                         EditorUtility.SetDirty(Variables);
-                        scrollPosition = GUILayout.BeginScrollView(scrollPosition, false, true, GUILayout.Width(150f));
+                        scrollPosition = GUILayout.BeginScrollView(scrollPosition, false, true, GUILayout.Width(200f));
                         {
                             for (int i = 0; i < Variables.Variables.Count; i++)
                             {
@@ -78,7 +84,7 @@ namespace UVNF.Editor
                                         EditorGUILayout.Popup("Value", Convert.ToInt32(Variables.Variables[selectedIndex].BooleanValue), new string[] { "False", "True" })); break;
                             }
 
-                            if (GUILayout.Button("Remove"))
+                            if (GUILayout.Button("-"))
                             {
                                 Variables.Variables.RemoveAt(selectedIndex);
                                 selectedIndex = -1;

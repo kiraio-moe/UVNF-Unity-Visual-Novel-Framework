@@ -21,8 +21,16 @@ namespace UVNF.Core.Story.Utility
 #if UNITY_EDITOR
         public override void DisplayLayout(Rect layoutRect, GUIStyle label)
         {
+            GUILayout.Space(8);
+            if (ObjectToSpawn == null)
+            {
+                EditorGUILayout.HelpBox("Please assign a Prefab.", MessageType.Warning);
+                GUILayout.Space(8);
+            }
+
             GUILayout.Label("Object To Spawn");
             ObjectToSpawn = EditorGUILayout.ObjectField(ObjectToSpawn, typeof(GameObject), false) as GameObject;
+            GUILayout.Space(8);
         }
 #endif
 

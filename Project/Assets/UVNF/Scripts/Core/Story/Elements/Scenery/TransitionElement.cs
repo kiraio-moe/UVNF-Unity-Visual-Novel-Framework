@@ -27,9 +27,10 @@ namespace UVNF.Core.Story.Scenery
 #if UNITY_EDITOR
         public override void DisplayLayout(Rect layoutRect, GUIStyle label)
         {
+            GUILayout.Space(8);
             TransitionEffects = (TransitionEnum.TransitionEffects)EditorGUILayout.EnumPopup("Effects", TransitionEffects);
 
-            GUILayout.Label("Options");
+            GUILayout.Label("Options", EditorStyles.boldLabel);
             switch (TransitionEffects)
             {
                 case TransitionEnum.TransitionEffects.Fade:
@@ -44,6 +45,7 @@ namespace UVNF.Core.Story.Scenery
                     // TODO
                     break;
             }
+            GUILayout.Space(8);
         }
 #endif
 

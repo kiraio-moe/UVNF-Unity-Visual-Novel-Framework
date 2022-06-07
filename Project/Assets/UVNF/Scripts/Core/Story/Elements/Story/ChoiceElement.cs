@@ -40,7 +40,9 @@ namespace UVNF.Core.Story.Dialogue
             }
 
             if (GUILayout.Button("+"))
+            {
                 AddChoice();
+            }
 
             ShuffleChoices = GUILayout.Toggle(ShuffleChoices, "Shuffle Choices");
             HideDialogue = GUILayout.Toggle(HideDialogue, "Hide Dialogue");

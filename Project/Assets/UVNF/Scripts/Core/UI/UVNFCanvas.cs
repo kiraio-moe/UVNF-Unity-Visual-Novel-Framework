@@ -65,12 +65,13 @@ namespace UVNF.Core.UI
         }
 
         #region Dialogue
-        public IEnumerator DisplayText(string text, params TextDisplayStyle[] displayStyles)
+        public IEnumerator DisplayText(string text, Color color, params TextDisplayStyle[] displayStyles)
         {
             ApplyTextDisplayStylesToTMP(DialogueTMP, displayStyles);
             BottomCanvasGroup.gameObject.SetActive(true);
 
             CharacterNamePlate.SetActive(false);
+            CharacterTMP.color = color;
 
             int textIndex = 0;
             while (textIndex < text.Length)
@@ -94,7 +95,7 @@ namespace UVNF.Core.UI
             while (!HasInput) yield return null;
         }
 
-        public IEnumerator DisplayText(string text, string characterName, bool useStylesForCharacterField = false, params TextDisplayStyle[] displayStyles)
+        public IEnumerator DisplayText(string text, string characterName, Color color, bool useStylesForCharacterField = false, params TextDisplayStyle[] displayStyles)
         {
             ApplyTextDisplayStylesToTMP(DialogueTMP, displayStyles);
             if (useStylesForCharacterField)
@@ -103,9 +104,12 @@ namespace UVNF.Core.UI
             CharacterNamePlate.SetActive(!string.IsNullOrEmpty(characterName));
 
             BottomCanvasGroup.gameObject.SetActive(true);
+            CharacterTMP.color = color;
 
             if (!string.Equals(CharacterTMP.text, characterName, StringComparison.Ordinal))
+            {
                 CharacterTMP.text = characterName;
+            }
 
             int textIndex = 0;
             while (textIndex < text.Length)
@@ -129,7 +133,7 @@ namespace UVNF.Core.UI
             while (!HasInput) yield return null;
         }
 
-        public IEnumerator DisplayText(string text, string characterName, AudioClip dialogue, AudioManager audio, bool useStylesForCharacterField = false, params TextDisplayStyle[] displayStyles)
+        public IEnumerator DisplayText(string text, string characterName, Color color, AudioClip dialogue, AudioManager audio, bool useStylesForCharacterField = false, params TextDisplayStyle[] displayStyles)
         {
             ApplyTextDisplayStylesToTMP(DialogueTMP, displayStyles);
             if (useStylesForCharacterField)
@@ -138,9 +142,12 @@ namespace UVNF.Core.UI
             CharacterNamePlate.SetActive(!string.IsNullOrEmpty(characterName));
 
             BottomCanvasGroup.gameObject.SetActive(true);
+            CharacterTMP.color = color;
 
             if (!string.Equals(CharacterTMP.text, characterName, StringComparison.Ordinal))
+            {
                 CharacterTMP.text = characterName;
+            }
 
             audio.PlaySound(dialogue, 1f);
 
@@ -166,7 +173,7 @@ namespace UVNF.Core.UI
             while (!HasInput) yield return null;
         }
 
-        public IEnumerator DisplayText(string text, string characterName, AudioClip boop, AudioManager audio, float pitchShift, bool beepOnVowel = false, bool useStylesForCharacterField = false, params TextDisplayStyle[] displayStyles)
+        public IEnumerator DisplayText(string text, string characterName, Color color, AudioClip boop, AudioManager audio, float pitchShift, bool beepOnVowel = false, bool useStylesForCharacterField = false, params TextDisplayStyle[] displayStyles)
         {
             ApplyTextDisplayStylesToTMP(DialogueTMP, displayStyles);
             if (useStylesForCharacterField)
@@ -175,9 +182,12 @@ namespace UVNF.Core.UI
             CharacterNamePlate.SetActive(!string.IsNullOrEmpty(characterName));
 
             BottomCanvasGroup.gameObject.SetActive(true);
+            CharacterTMP.color = color;
 
             if (!string.Equals(CharacterTMP.text, characterName, StringComparison.Ordinal))
+            {
                 CharacterTMP.text = characterName;
+            }
 
             int textIndex = 0;
             while (textIndex < text.Length)
@@ -210,7 +220,6 @@ namespace UVNF.Core.UI
 
             while (!HasInput) yield return null;
         }
-
         #endregion
 
         #region Choice

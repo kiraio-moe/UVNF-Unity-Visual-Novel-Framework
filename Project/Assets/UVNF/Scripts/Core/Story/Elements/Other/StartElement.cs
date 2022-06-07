@@ -38,6 +38,7 @@ namespace UVNF.Core.Story.Other
 
         public override void DisplayNodeLayout(Rect layoutRect)
         {
+            GUILayout.Space(8);
             GUILayout.BeginHorizontal();
             {
                 GUILayout.Label("Story Name:");
@@ -46,6 +47,7 @@ namespace UVNF.Core.Story.Other
             GUILayout.EndHorizontal();
 
             IsRoot = GUILayout.Toggle(IsRoot, "Is Root");
+            GUILayout.Space(8);
         }
 #endif
     }

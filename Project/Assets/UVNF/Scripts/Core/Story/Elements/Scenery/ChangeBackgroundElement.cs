@@ -24,12 +24,16 @@ namespace UVNF.Core.Story.Scenery
 #if UNITY_EDITOR
         public override void DisplayLayout(Rect layoutRect, GUIStyle label)
         {
+            GUILayout.Space(8);
             GUILayout.Label("New Background");
             NewBackground = EditorGUILayout.ObjectField(NewBackground, typeof(Sprite), false) as Sprite;
 
             Fade = GUILayout.Toggle(Fade, "Fade");
             if (Fade)
+            {
                 FadeTime = EditorGUILayout.Slider("Fade Out Time", FadeTime, 0.1f, 10f);
+            }
+            GUILayout.Space(8);
         }
 #endif
 

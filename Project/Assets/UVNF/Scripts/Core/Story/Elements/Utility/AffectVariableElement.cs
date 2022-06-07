@@ -37,7 +37,20 @@ namespace UVNF.Core.Story.Utility
 #if UNITY_EDITOR
         public override void DisplayLayout(Rect layoutRect, GUIStyle label)
         {
+            GUILayout.Space(8);
+            if (Variables == null)
+            {
+                EditorGUILayout.HelpBox("Please assign a Variable Manager or you can create one by right click > Create > UVNF > Variable Manager.", MessageType.Warning);
+                GUILayout.Space(5);
+            }
+            else if (Variables.Variables.Count <= 0)
+            {
+                EditorGUILayout.HelpBox("Looks like you haven\'t created any variable yet, please create one at UVNF (window menu) > Variable Manager.", MessageType.Warning);
+                GUILayout.Space(8);
+            }
+
             Variables = EditorGUILayout.ObjectField("Variables", Variables, typeof(VariableManager), false) as VariableManager;
+
             if (Variables != null && Variables.Variables.Count > 0)
             {
                 VariableIndex = EditorGUILayout.Popup("Variable", VariableIndex, Variables.VariableNames());
@@ -54,6 +67,7 @@ namespace UVNF.Core.Story.Utility
                         BooleanValue = System.Convert.ToBoolean(EditorGUILayout.Popup("Value", System.Convert.ToInt32(BooleanValue), booleanOptions)); break;
                 }
             }
+            GUILayout.Space(8);
         }
 #endif
 
